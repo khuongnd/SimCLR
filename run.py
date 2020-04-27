@@ -1,3 +1,10 @@
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
+if len(os.argv) > 1:
+    os.environ["CUDA_VISIBLE_DEVICES"] = os.argv[1]
+
 from simclr import SimCLR
 import yaml
 from data_aug.dataset_wrapper import DataSetWrapper
